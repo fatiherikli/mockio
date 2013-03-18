@@ -19,7 +19,7 @@ def mockio(files):
     """
     fake_storage = dict((k, StringIO(v)) for k, v in files.iteritems())
 
-    def get_file(filename):
+    def get_file(filename, *args):
         try:
             return fake_storage[filename]
         except KeyError:
