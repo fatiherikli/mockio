@@ -1,6 +1,6 @@
 ### Mockio
 
-Mockio is a mini library that allows you to mock open method with StringIO.
+Mockio is a mini helper that allows you to mock open method with StringIO.
 
 Example:
 
