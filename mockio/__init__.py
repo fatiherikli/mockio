@@ -20,10 +20,10 @@ def mockio(files):
     fake_storage = dict((k, StringIO(v)) for k, v in files.items())
 
     def get_file(filename):
-        stringio = fake_storage.get(filename)
-        if stringio is None:
+        try:
+            return fake_storage[filename]
+        except KeyError:
             raise IOError
-        return stringio
 
     def wrap(func):
         def inner(*args, **kwargs):
