@@ -17,7 +17,7 @@ def mockio(files):
             assert open("/etc/nginx/sites-enabled/foo").read(), "server {}"
 
     """
-    fake_storage = dict((k, StringIO(v)) for k, v in files.items())
+    fake_storage = dict((k, StringIO(v)) for k, v in files.iteritems())
 
     def get_file(filename):
         try:
